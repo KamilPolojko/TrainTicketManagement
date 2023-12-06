@@ -6,14 +6,15 @@ namespace TrainTicketManagement.Api.Controllers;
 [Route("api/acounts")]
 [ApiController]
 [EnableCors("MyAllowSpecificOrigins")]
-public class LogIntoAccountController : Controller
+public class UserManagerController : Controller
 {
 
-    private readonly ILogger<LogIntoAccountController> _logger;
+    private readonly ILogger<UserManagerController> _logger;
 
-    public LogIntoAccountController(ILogger<LogIntoAccountController> logger)
+    public UserManagerController(ILogger<UserManagerController> logger)
     {
         _logger = logger;
     }
+    
     
 }

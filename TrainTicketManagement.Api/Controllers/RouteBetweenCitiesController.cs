@@ -6,16 +6,17 @@ namespace TrainTicketManagement.Api.Controllers;
 [Route("api/cities-connections")]
 [ApiController]
 [EnableCors("MyAllowSpecificOrigins")]
-public class ConnectionBetweenCitiesController : Controller
+public class RouteBetweenCitiesController : Controller
 {
 
     
-    private readonly ILogger<ConnectionBetweenCitiesController> _logger;
+    private readonly ILogger<RouteBetweenCitiesController> _logger;
 
-    public ConnectionBetweenCitiesController(ILogger<ConnectionBetweenCitiesController> logger)
+    public RouteBetweenCitiesController(ILogger<RouteBetweenCitiesController> logger)
     {
         _logger = logger;
     }
+    
     
     //Tutaj będzie zawarta ilość przesiadek
     

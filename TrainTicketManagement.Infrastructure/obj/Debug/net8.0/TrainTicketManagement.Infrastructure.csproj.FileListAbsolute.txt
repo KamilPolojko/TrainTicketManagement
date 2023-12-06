@@ -10,3 +10,4 @@ C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManage
 C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Infrastructure\obj\Debug\net8.0\refint\TrainTicketManagement.Infrastructure.dll
 C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Infrastructure\obj\Debug\net8.0\TrainTicketManagement.Infrastructure.pdb
 C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Infrastructure\obj\Debug\net8.0\ref\TrainTicketManagement.Infrastructure.dll
+C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Infrastructure\obj\Debug\net8.0\TrainTicketManagement.Infrastructure.sourcelink.json
