@@ -14,18 +14,7 @@ public class PersonName:ValueObject
 
     public override string ToString()
     {
-        var personName= $"{FirstName} {LastName}";
-
-        try
-        {
-            return personName;
-
-        }
-        catch (Exception e)
-        {
-            throw new PersonNameException(personName, e);
-
-        }
+        return   $"{FirstName} {LastName}";
     }
     
     

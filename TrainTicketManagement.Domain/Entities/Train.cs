@@ -22,11 +22,11 @@ public class Train:AuditableEntity
     
     public int NumberOfSeatsSecondClass { get; set; }
     
-    public City BaseStation { get; set; }
+    public string BaseStation { get; set; }
 
-    public ICollection<City> ChangeStations { get; private set; } = new List<City>();
+    public ICollection<string> ChangeStations { get; private set; } = new List<string>();
     
-    public City Destination { get; set; }
+    public string Destination { get; set; }
 
     public ICollection<DateTime> TravelStartTime { get; private set; } = new List<DateTime>();
 
@@ -34,7 +34,7 @@ public class Train:AuditableEntity
 
     public ICollection<DateTime> TravelFinishTime { get; private set; } = new List<DateTime>();
     
-
+    
     
     public ICollection<Seat> Seats { get; set; }
     
@@ -43,6 +43,4 @@ public class Train:AuditableEntity
     
     public Ticket Ticket { get; set; }
     
-    public int CityId { get; set; }
-    public ICollection<City> Cities { get; set; }
 }

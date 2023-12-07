@@ -1,0 +1,12 @@
+C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Domain\bin\Debug\net8.0\TrainTicketManagement.Domain.deps.json
+C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Domain\bin\Debug\net8.0\TrainTicketManagement.Domain.dll
+C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Domain\bin\Debug\net8.0\TrainTicketManagement.Domain.pdb
+C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Domain\obj\Debug\net8.0\TrainTicketManagement.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Domain\obj\Debug\net8.0\TrainTicketManagement.Domain.AssemblyInfoInputs.cache
+C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Domain\obj\Debug\net8.0\TrainTicketManagement.Domain.AssemblyInfo.cs
+C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Domain\obj\Debug\net8.0\TrainTicketManagement.Domain.csproj.CoreCompileInputs.cache
+C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Domain\obj\Debug\net8.0\TrainTicketManagement.Domain.sourcelink.json
+C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Domain\obj\Debug\net8.0\TrainTicketManagement.Domain.dll
+C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Domain\obj\Debug\net8.0\refint\TrainTicketManagement.Domain.dll
+C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Domain\obj\Debug\net8.0\TrainTicketManagement.Domain.pdb
+C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Domain\obj\Debug\net8.0\ref\TrainTicketManagement.Domain.dll

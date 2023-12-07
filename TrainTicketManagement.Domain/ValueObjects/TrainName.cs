@@ -12,18 +12,7 @@ public class TrainName : ValueObject
 
     public override string ToString()
     {
-        var trainName = "";
-        try
-        {
-             trainName= $"{FirstPartOfName} {SerialNumberOfTrain}";
-            return trainName;
-
-        }
-        catch (Exception e)
-        {
-            throw new TrainNameException(trainName, e);
-
-        }
+        return  $"{FirstPartOfName} {SerialNumberOfTrain}";
     }
     
     

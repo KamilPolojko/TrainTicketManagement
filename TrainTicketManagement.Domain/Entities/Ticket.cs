@@ -16,11 +16,6 @@ public class Ticket :AuditableEntity
     
     public string TrainRelief { get; set; }
     
-    public City BaseStation { get; set; }
-    
-    public ICollection<City> ChangeStations { get; private set; } = new List<City>();
-    
-    public City Destination { get; set; }
 
     public ICollection<DateTime> TravelStartTime { get; private set; } = new List<DateTime>();
 
