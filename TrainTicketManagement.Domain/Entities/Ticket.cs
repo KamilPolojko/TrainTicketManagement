@@ -17,11 +17,11 @@ public class Ticket :AuditableEntity
     public string TrainRelief { get; set; }
     
 
-    public ICollection<DateTime> TravelStartTime { get; private set; } = new List<DateTime>();
+    public DateTime TravelStartTime { get; set; }
 
     public ICollection<DateTime> ChangeStationsSchedule { get; private set; } = new List<DateTime>();
     
-    public ICollection<DateTime> TravelFinishTime { get; private set; } = new List<DateTime>();
+    public DateTime TravelFinishTime { get; set; }
     
     
     

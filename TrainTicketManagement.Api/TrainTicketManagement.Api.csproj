@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-	 <InvariantGlobalization>true</InvariantGlobalization>
+	 <InvariantGlobalization>false</InvariantGlobalization>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <DocumentationFile>C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Api\TrainTicketManagement.xml</DocumentationFile>
   </PropertyGroup>

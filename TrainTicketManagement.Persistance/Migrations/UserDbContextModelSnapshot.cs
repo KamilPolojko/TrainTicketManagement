@@ -30,18 +30,16 @@ namespace TrainTicketManagement.Persistance.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("Created")
+                    b.Property<DateTime?>("Created")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("Inactivated")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("InactivatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsOccupied")
@@ -51,7 +49,6 @@ namespace TrainTicketManagement.Persistance.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ModifiedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("NumberOfSeat")
@@ -68,6 +65,24 @@ namespace TrainTicketManagement.Persistance.Migrations
                     b.HasIndex("TrainId");
 
                     b.ToTable("Seats");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            IsOccupied = true,
+                            NumberOfSeat = 1,
+                            StatusID = 0,
+                            TrainId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            IsOccupied = false,
+                            NumberOfSeat = 2,
+                            StatusID = 0,
+                            TrainId = 1
+                        });
                 });
 
             modelBuilder.Entity("TrainTicketManagement.Domain.Entities.Ticket", b =>
@@ -82,25 +97,22 @@ namespace TrainTicketManagement.Persistance.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("Created")
+                    b.Property<DateTime?>("Created")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("Inactivated")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("InactivatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("Modified")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ModifiedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NameOfTrainClass")
@@ -120,13 +132,11 @@ namespace TrainTicketManagement.Persistance.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("TravelFinishTime")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("TravelFinishTime")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("TravelStartTime")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("TravelStartTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -136,6 +146,34 @@ namespace TrainTicketManagement.Persistance.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Tickets");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ChangeStationsSchedule = "[\"2009-01-01T00:00:00\"]",
+                            NameOfTrainClass = "First",
+                            NumberOfSeat = 100,
+                            Price = 19.99f,
+                            StatusID = 0,
+                            TrainRelief = "Student",
+                            TravelFinishTime = new DateTime(2009, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            TravelStartTime = new DateTime(2009, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ChangeStationsSchedule = "[\"2007-02-03T00:00:00\"]",
+                            NameOfTrainClass = "First",
+                            NumberOfSeat = 120,
+                            Price = 16.99f,
+                            StatusID = 0,
+                            TrainRelief = "Student",
+                            TravelFinishTime = new DateTime(2007, 2, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            TravelStartTime = new DateTime(2007, 2, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserId = 1
+                        });
                 });
 
             modelBuilder.Entity("TrainTicketManagement.Domain.Entities.Train", b =>
@@ -158,11 +196,10 @@ namespace TrainTicketManagement.Persistance.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("Created")
+                    b.Property<DateTime?>("Created")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Destination")
@@ -173,14 +210,12 @@ namespace TrainTicketManagement.Persistance.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("InactivatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("Modified")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ModifiedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("NumberOfSeatsFirstClass")
@@ -211,6 +246,24 @@ namespace TrainTicketManagement.Persistance.Migrations
                     b.HasIndex("TicketId");
 
                     b.ToTable("Trains");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BaseStation = "Warszawa",
+                            ChangeStations = "[\"W\\u0142oc\\u0142awek\",\"Krak\\u00F3w\",\"Choroszcz\"]",
+                            ChangesStationsSchedule = "[\"2007-02-14T00:00:00\"]",
+                            Created = new DateTime(2023, 12, 23, 18, 39, 43, 609, DateTimeKind.Local).AddTicks(2152),
+                            Destination = "Wroclaw",
+                            NumberOfSeatsFirstClass = 150,
+                            NumberOfSeatsSecondClass = 100,
+                            QuantityOfCarriage = 4,
+                            StatusID = 1,
+                            TicketId = 0,
+                            TravelFinishTime = "[\"2008-03-24T00:00:00\"]",
+                            TravelStartTime = "[\"2006-01-03T00:00:00\"]"
+                        });
                 });
 
             modelBuilder.Entity("TrainTicketManagement.Domain.Entities.User", b =>
@@ -221,11 +274,10 @@ namespace TrainTicketManagement.Persistance.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("Created")
+                    b.Property<DateTime?>("Created")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("DateOfBirth")
@@ -235,7 +287,6 @@ namespace TrainTicketManagement.Persistance.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("InactivatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Login")
@@ -246,7 +297,6 @@ namespace TrainTicketManagement.Persistance.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ModifiedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
@@ -255,7 +305,8 @@ namespace TrainTicketManagement.Persistance.Migrations
 
                     b.Property<string>("PeselNumber")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(11)
+                        .HasColumnType("nvarchar(11)");
 
                     b.Property<int>("StatusID")
                         .HasColumnType("int");
@@ -263,6 +314,18 @@ namespace TrainTicketManagement.Persistance.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Created = new DateTime(2023, 12, 23, 18, 39, 43, 609, DateTimeKind.Local).AddTicks(1648),
+                            DateOfBirth = new DateTime(2003, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Login = "Admin",
+                            Password = "Password",
+                            PeselNumber = "23234576345",
+                            StatusID = 1
+                        });
                 });
 
             modelBuilder.Entity("TrainTicketManagement.Domain.Entities.Seat", b =>
@@ -302,11 +365,13 @@ namespace TrainTicketManagement.Persistance.Migrations
 
                             b1.Property<string>("FirstPartOfName")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("FirstPartOfTheName");
 
                             b1.Property<string>("SerialNumberOfTrain")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("SerialNumberOfTrain");
 
                             b1.HasKey("TrainId");
 
@@ -314,6 +379,14 @@ namespace TrainTicketManagement.Persistance.Migrations
 
                             b1.WithOwner()
                                 .HasForeignKey("TrainId");
+
+                            b1.HasData(
+                                new
+                                {
+                                    TrainId = 1,
+                                    FirstPartOfName = "IC",
+                                    SerialNumberOfTrain = "1620"
+                                });
                         });
 
                     b.Navigation("Name")
@@ -331,11 +404,13 @@ namespace TrainTicketManagement.Persistance.Migrations
 
                             b1.Property<string>("DomainName")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("MailDomain");
 
                             b1.Property<string>("UserName")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("MailName");
 
                             b1.HasKey("UserId");
 
@@ -343,6 +418,14 @@ namespace TrainTicketManagement.Persistance.Migrations
 
                             b1.WithOwner()
                                 .HasForeignKey("UserId");
+
+                            b1.HasData(
+                                new
+                                {
+                                    UserId = 1,
+                                    DomainName = "gmail.com",
+                                    UserName = "janzawadzki"
+                                });
                         });
 
                     b.OwnsOne("TrainTicketManagement.Domain.ValueObjects.PersonName", "PersonName", b1 =>
@@ -352,11 +435,13 @@ namespace TrainTicketManagement.Persistance.Migrations
 
                             b1.Property<string>("FirstName")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("FirstName");
 
                             b1.Property<string>("LastName")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("LastName");
 
                             b1.HasKey("UserId");
 
@@ -364,6 +449,14 @@ namespace TrainTicketManagement.Persistance.Migrations
 
                             b1.WithOwner()
                                 .HasForeignKey("UserId");
+
+                            b1.HasData(
+                                new
+                                {
+                                    UserId = 1,
+                                    FirstName = "Jan",
+                                    LastName = "Zawadzki"
+                                });
                         });
 
                     b.Navigation("Email")

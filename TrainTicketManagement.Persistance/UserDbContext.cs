@@ -1,4 +1,6 @@
-﻿using TrainTicketManagement.Domain.Common;
+﻿using System.Reflection;
+using TrainTicketManagement.Application.Common.Interfaces;
+using TrainTicketManagement.Domain.Common;
 using TrainTicketManagement.Domain.Entities;
 
 namespace TrainTicketManagement.Persistance;
@@ -7,9 +9,10 @@ using Microsoft.EntityFrameworkCore;
 
 public class UserDbContext : DbContext
 {
-    public UserDbContext(DbContextOptions<UserDbContext> options) : base(options)
+    private readonly IDateTime _dateTime;
+    public UserDbContext(DbContextOptions<UserDbContext> options, IDateTime dateTime) : base(options)
     {
-        
+        _dateTime = dateTime;
     }
     
     public DbSet<Seat> Seats { get; set; }
@@ -19,10 +22,8 @@ public class UserDbContext : DbContext
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Train>().OwnsOne(p => p.Name);
-        modelBuilder.Entity<User>().OwnsOne(p => p.PersonName);
-        modelBuilder.Entity<User>().OwnsOne(p => p.Email);
-        
+        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        modelBuilder.SeedData();
     }
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
@@ -33,17 +34,17 @@ public class UserDbContext : DbContext
             {
                 case EntityState.Added:
                     entry.Entity.CreatedBy = string.Empty;
-                    entry.Entity.Created = DateTime.Now;
+                    entry.Entity.Created = _dateTime.Now;
                     entry.Entity.StatusID = 1;
                     break;
                 case EntityState.Modified:
                     entry.Entity.ModifiedBy = string.Empty;
-                    entry.Entity.Modified = DateTime.Now;
+                    entry.Entity.Modified = _dateTime.Now;
                     break;
                 case EntityState.Deleted:
                     entry.Entity.ModifiedBy = string.Empty;
-                    entry.Entity.Modified = DateTime.Now;
-                    entry.Entity.Inactivated = DateTime.Now;
+                    entry.Entity.Modified = _dateTime.Now;
+                    entry.Entity.Inactivated = _dateTime.Now;
                     entry.Entity.InactivatedBy = string.Empty;
                     entry.Entity.StatusID = 0;
                     entry.State = EntityState.Modified;

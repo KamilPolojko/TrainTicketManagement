@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TrainTicketManagement.Application\TrainTicketManagement.Application.csproj" />
     <ProjectReference Include="..\TrainTicketManagement.Domain\TrainTicketManagement.Domain.csproj" />
   </ItemGroup>
 

@@ -10,7 +10,6 @@ public class Seat:AuditableEntity
     public bool IsOccupied { get; set; }
     
     
-    
     public int TrainId { get; set; }
 
     public Train Train { get; set; }

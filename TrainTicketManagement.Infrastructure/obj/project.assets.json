@@ -91,6 +91,16 @@
         "build": {
           "buildTransitive/net6.0/_._": {}
         }
+      },
+      "TrainTicketManagement.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/TrainTicketManagement.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TrainTicketManagement.Application.dll": {}
+        }
       }
     }
   },
@@ -248,12 +258,18 @@
         "microsoft.extensions.primitives.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "TrainTicketManagement.Application/1.0.0": {
+      "type": "project",
+      "path": "../TrainTicketManagement.Application/TrainTicketManagement.Application.csproj",
+      "msbuildProject": "../TrainTicketManagement.Application/TrainTicketManagement.Application.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "Microsoft.Extensions.Configuration >= 8.0.0",
-      "Microsoft.Extensions.DependencyInjection >= 8.0.0"
+      "Microsoft.Extensions.DependencyInjection >= 8.0.0",
+      "TrainTicketManagement.Application >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -288,7 +304,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Projekty Programowania\\WebAPI Masters\\TrainTicketManagement\\TrainTicketManagement.Application\\TrainTicketManagement.Application.csproj": {
+              "projectPath": "C:\\Projekty Programowania\\WebAPI Masters\\TrainTicketManagement\\TrainTicketManagement.Application\\TrainTicketManagement.Application.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
