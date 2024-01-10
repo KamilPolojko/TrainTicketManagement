@@ -27,6 +27,11 @@ public class Email : ValueObject
         return emailObj;
     }
     
+    public override string ToString()
+    {
+        return   $"{UserName}@{DomainName}";
+    }
+    
     protected override IEnumerable<object> GetEqualityComponents()
     {
         throw new NotImplementedException();

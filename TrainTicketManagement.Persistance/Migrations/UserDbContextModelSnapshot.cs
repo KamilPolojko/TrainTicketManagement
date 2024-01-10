@@ -122,8 +122,8 @@ namespace TrainTicketManagement.Persistance.Migrations
                     b.Property<int>("NumberOfSeat")
                         .HasColumnType("int");
 
-                    b.Property<float>("Price")
-                        .HasColumnType("real");
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("StatusID")
                         .HasColumnType("int");
@@ -154,7 +154,7 @@ namespace TrainTicketManagement.Persistance.Migrations
                             ChangeStationsSchedule = "[\"2009-01-01T00:00:00\"]",
                             NameOfTrainClass = "First",
                             NumberOfSeat = 100,
-                            Price = 19.99f,
+                            Price = 19.99m,
                             StatusID = 0,
                             TrainRelief = "Student",
                             TravelFinishTime = new DateTime(2009, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -167,7 +167,7 @@ namespace TrainTicketManagement.Persistance.Migrations
                             ChangeStationsSchedule = "[\"2007-02-03T00:00:00\"]",
                             NameOfTrainClass = "First",
                             NumberOfSeat = 120,
-                            Price = 16.99f,
+                            Price = 16.99m,
                             StatusID = 0,
                             TrainRelief = "Student",
                             TravelFinishTime = new DateTime(2007, 2, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -254,13 +254,13 @@ namespace TrainTicketManagement.Persistance.Migrations
                             BaseStation = "Warszawa",
                             ChangeStations = "[\"W\\u0142oc\\u0142awek\",\"Krak\\u00F3w\",\"Choroszcz\"]",
                             ChangesStationsSchedule = "[\"2007-02-14T00:00:00\"]",
-                            Created = new DateTime(2023, 12, 23, 18, 39, 43, 609, DateTimeKind.Local).AddTicks(2152),
+                            Created = new DateTime(2024, 1, 1, 22, 14, 12, 612, DateTimeKind.Local).AddTicks(5487),
                             Destination = "Wroclaw",
                             NumberOfSeatsFirstClass = 150,
                             NumberOfSeatsSecondClass = 100,
                             QuantityOfCarriage = 4,
                             StatusID = 1,
-                            TicketId = 0,
+                            TicketId = 1,
                             TravelFinishTime = "[\"2008-03-24T00:00:00\"]",
                             TravelStartTime = "[\"2006-01-03T00:00:00\"]"
                         });
@@ -319,7 +319,7 @@ namespace TrainTicketManagement.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2023, 12, 23, 18, 39, 43, 609, DateTimeKind.Local).AddTicks(1648),
+                            Created = new DateTime(2024, 1, 1, 22, 14, 12, 612, DateTimeKind.Local).AddTicks(4733),
                             DateOfBirth = new DateTime(2003, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Login = "Admin",
                             Password = "Password",

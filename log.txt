@@ -1,0 +1,499 @@
+01/07/2024 03:34:15 +01:00 Application is starting up
+01/07/2024 03:34:38 +01:00 Application is starting up
+01/07/2024 03:43:33 +01:00 Application is starting up
+01/07/2024 03:43:42 +01:00 Failed to determine the https port for redirect.
+01/07/2024 03:43:42 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/07/2024 02:43:37, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/07/2024 03:43:42 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/07/2024 02:43:37, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/07/2024 03:43:43 +01:00 No store type was specified for the decimal property '"Price"' on entity type '"Ticket"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+01/07/2024 03:43:44 +01:00 TrainTicketManagement Long Running Request: "CreateUserCommand" (1833 miliseconds)CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/07/2024 02:43:37, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/07/2024 03:43:44 +01:00 HTTP "POST" "/api/users" responded 200 in 1970.6920 ms
+01/07/2024 03:45:55 +01:00 Application is starting up
+01/07/2024 03:46:12 +01:00 Failed to determine the https port for redirect.
+01/07/2024 03:46:12 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "string", LastName: "string", PeselNumber: "12345678999999", DateOfBirth: 01/07/2024 02:46:00, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/07/2024 03:46:12 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "string", LastName: "string", PeselNumber: "12345678999999", DateOfBirth: 01/07/2024 02:46:00, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/07/2024 03:46:13 +01:00 No store type was specified for the decimal property '"Price"' on entity type '"Ticket"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+01/07/2024 03:46:14 +01:00 An exception occurred in the database while saving changes for context type '"TrainTicketManagement.Persistance.UserDbContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): String or binary data would be truncated in table 'UserDatabase.dbo.Users', column 'PeselNumber'. Truncated value: '12345678999'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:46a354b4-bf7c-422f-af55-b46dea1a5548
+Error Number:2628,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)"
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): String or binary data would be truncated in table 'UserDatabase.dbo.Users', column 'PeselNumber'. Truncated value: '12345678999'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:46a354b4-bf7c-422f-af55-b46dea1a5548
+Error Number:2628,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+01/07/2024 03:46:14 +01:00 HTTP "POST" "/api/users" responded 500 in 1760.2267 ms
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): String or binary data would be truncated in table 'UserDatabase.dbo.Users', column 'PeselNumber'. Truncated value: '12345678999'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:46a354b4-bf7c-422f-af55-b46dea1a5548
+Error Number:2628,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at TrainTicketManagement.Application.Directors.Commands.CreateUser.CreateUserCommandHandler.Handle(CreateUserCommand request, CancellationToken cancellationToken) in C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Application\Directors\Commands\CreateUser\CreateUserCommandHandler.cs:line 31
+   at TrainTicketManagement.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Application\Common\Behaviours\PerformanceBehaviour.cs:line 24
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at TrainTicketManagement.Api.Controllers.UserManagerController.CreateDirector(CreateUserCommand command) in C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Api\Controllers\UserManagerController.cs:line 25
+   at lambda_method6(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+01/07/2024 03:46:14 +01:00 An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): String or binary data would be truncated in table 'UserDatabase.dbo.Users', column 'PeselNumber'. Truncated value: '12345678999'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:46a354b4-bf7c-422f-af55-b46dea1a5548
+Error Number:2628,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at TrainTicketManagement.Application.Directors.Commands.CreateUser.CreateUserCommandHandler.Handle(CreateUserCommand request, CancellationToken cancellationToken) in C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Application\Directors\Commands\CreateUser\CreateUserCommandHandler.cs:line 31
+   at TrainTicketManagement.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Application\Common\Behaviours\PerformanceBehaviour.cs:line 24
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at TrainTicketManagement.Api.Controllers.UserManagerController.CreateDirector(CreateUserCommand command) in C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Api\Controllers\UserManagerController.cs:line 25
+   at lambda_method6(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+01/07/2024 03:48:47 +01:00 Application is starting up
+01/07/2024 03:49:01 +01:00 Failed to determine the https port for redirect.
+01/07/2024 03:49:01 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "string", LastName: "string", PeselNumber: "1234567899999", DateOfBirth: 01/07/2024 02:48:52, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/07/2024 03:49:01 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "string", LastName: "string", PeselNumber: "1234567899999", DateOfBirth: 01/07/2024 02:48:52, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/07/2024 03:49:02 +01:00 No store type was specified for the decimal property '"Price"' on entity type '"Ticket"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+01/07/2024 03:49:03 +01:00 An exception occurred in the database while saving changes for context type '"TrainTicketManagement.Persistance.UserDbContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): String or binary data would be truncated in table 'UserDatabase.dbo.Users', column 'PeselNumber'. Truncated value: '12345678999'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:924aa350-b785-474d-b279-e114f8e425a8
+Error Number:2628,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)"
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): String or binary data would be truncated in table 'UserDatabase.dbo.Users', column 'PeselNumber'. Truncated value: '12345678999'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:924aa350-b785-474d-b279-e114f8e425a8
+Error Number:2628,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+01/07/2024 03:49:03 +01:00 HTTP "POST" "/api/users" responded 500 in 1768.2638 ms
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): String or binary data would be truncated in table 'UserDatabase.dbo.Users', column 'PeselNumber'. Truncated value: '12345678999'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:924aa350-b785-474d-b279-e114f8e425a8
+Error Number:2628,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at TrainTicketManagement.Application.Directors.Commands.CreateUser.CreateUserCommandHandler.Handle(CreateUserCommand request, CancellationToken cancellationToken) in C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Application\Directors\Commands\CreateUser\CreateUserCommandHandler.cs:line 31
+   at TrainTicketManagement.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Application\Common\Behaviours\PerformanceBehaviour.cs:line 24
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at TrainTicketManagement.Api.Controllers.UserManagerController.CreateDirector(CreateUserCommand command) in C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Api\Controllers\UserManagerController.cs:line 25
+   at lambda_method6(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+01/07/2024 03:49:03 +01:00 An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): String or binary data would be truncated in table 'UserDatabase.dbo.Users', column 'PeselNumber'. Truncated value: '12345678999'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:924aa350-b785-474d-b279-e114f8e425a8
+Error Number:2628,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at TrainTicketManagement.Application.Directors.Commands.CreateUser.CreateUserCommandHandler.Handle(CreateUserCommand request, CancellationToken cancellationToken) in C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Application\Directors\Commands\CreateUser\CreateUserCommandHandler.cs:line 31
+   at TrainTicketManagement.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Application\Common\Behaviours\PerformanceBehaviour.cs:line 24
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at TrainTicketManagement.Api.Controllers.UserManagerController.CreateDirector(CreateUserCommand command) in C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Api\Controllers\UserManagerController.cs:line 25
+   at lambda_method6(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+01/07/2024 03:49:28 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "string", LastName: "string", PeselNumber: "", DateOfBirth: 01/07/2024 02:49:21, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/07/2024 03:49:28 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "string", LastName: "string", PeselNumber: "", DateOfBirth: 01/07/2024 02:49:21, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/07/2024 03:49:28 +01:00 HTTP "POST" "/api/users" responded 200 in 130.8900 ms
+01/07/2024 03:50:36 +01:00 Application is starting up
+01/07/2024 03:50:47 +01:00 Failed to determine the https port for redirect.
+01/07/2024 03:50:47 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "string", LastName: "string", PeselNumber: "", DateOfBirth: 01/07/2024 02:50:42, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/07/2024 03:50:47 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "string", LastName: "string", PeselNumber: "", DateOfBirth: 01/07/2024 02:50:42, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/07/2024 03:50:48 +01:00 No store type was specified for the decimal property '"Price"' on entity type '"Ticket"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+01/07/2024 03:50:49 +01:00 TrainTicketManagement Long Running Request: "CreateUserCommand" (1717 miliseconds)CreateUserCommand { FirstName: "string", LastName: "string", PeselNumber: "", DateOfBirth: 01/07/2024 02:50:42, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/07/2024 03:50:49 +01:00 HTTP "POST" "/api/users" responded 200 in 1830.8357 ms
+01/07/2024 15:16:45 +01:00 Application is starting up
+01/07/2024 15:17:10 +01:00 Failed to determine the https port for redirect.
+01/07/2024 15:17:10 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "string", LastName: "string", PeselNumber: "", DateOfBirth: 01/07/2024 14:16:57, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/07/2024 15:17:10 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "string", LastName: "string", PeselNumber: "", DateOfBirth: 01/07/2024 14:16:57, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/07/2024 15:17:11 +01:00 No store type was specified for the decimal property '"Price"' on entity type '"Ticket"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+01/07/2024 15:17:12 +01:00 TrainTicketManagement Long Running Request: "CreateUserCommand" (2148 miliseconds)CreateUserCommand { FirstName: "string", LastName: "string", PeselNumber: "", DateOfBirth: 01/07/2024 14:16:57, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/07/2024 15:17:12 +01:00 HTTP "POST" "/api/users" responded 200 in 2387.6847 ms
+01/07/2024 15:20:45 +01:00 Application is starting up
+01/07/2024 15:21:00 +01:00 Failed to determine the https port for redirect.
+01/07/2024 15:21:12 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "string", LastName: "string", PeselNumber: "", DateOfBirth: 01/07/2024 14:20:52, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/07/2024 15:21:14 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "string", LastName: "string", PeselNumber: "", DateOfBirth: 01/07/2024 14:20:52, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/07/2024 15:21:15 +01:00 No store type was specified for the decimal property '"Price"' on entity type '"Ticket"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+01/07/2024 15:21:15 +01:00 TrainTicketManagement Long Running Request: "CreateUserCommand" (1616 miliseconds)CreateUserCommand { FirstName: "string", LastName: "string", PeselNumber: "", DateOfBirth: 01/07/2024 14:20:52, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/07/2024 15:21:15 +01:00 HTTP "POST" "/api/users" responded 200 in 15543.8730 ms
+01/07/2024 15:22:11 +01:00 Application is starting up
+01/07/2024 15:22:20 +01:00 Failed to determine the https port for redirect.
+01/07/2024 15:22:20 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "string", LastName: "string", PeselNumber: "", DateOfBirth: 01/07/2024 14:22:15, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/07/2024 15:22:20 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "string", LastName: "string", PeselNumber: "", DateOfBirth: 01/07/2024 14:22:15, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/07/2024 15:22:21 +01:00 No store type was specified for the decimal property '"Price"' on entity type '"Ticket"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+01/07/2024 15:22:22 +01:00 TrainTicketManagement Long Running Request: "CreateUserCommand" (1607 miliseconds)CreateUserCommand { FirstName: "string", LastName: "string", PeselNumber: "", DateOfBirth: 01/07/2024 14:22:15, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/07/2024 15:22:22 +01:00 HTTP "POST" "/api/users" responded 200 in 1724.7279 ms
+01/07/2024 15:23:05 +01:00 Application is starting up
+01/07/2024 15:23:15 +01:00 Failed to determine the https port for redirect.
+01/07/2024 15:23:15 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/07/2024 14:23:09, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/07/2024 15:23:15 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/07/2024 14:23:09, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/07/2024 15:23:16 +01:00 No store type was specified for the decimal property '"Price"' on entity type '"Ticket"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+01/07/2024 15:23:16 +01:00 TrainTicketManagement Long Running Request: "CreateUserCommand" (1584 miliseconds)CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/07/2024 14:23:09, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/07/2024 15:23:16 +01:00 HTTP "POST" "/api/users" responded 200 in 1702.5497 ms
+01/07/2024 15:24:00 +01:00 Application is starting up
+01/07/2024 15:24:10 +01:00 Failed to determine the https port for redirect.
+01/07/2024 15:24:10 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/07/2024 14:24:05, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/07/2024 15:24:10 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/07/2024 14:24:05, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/07/2024 15:24:11 +01:00 No store type was specified for the decimal property '"Price"' on entity type '"Ticket"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+01/07/2024 15:24:12 +01:00 TrainTicketManagement Long Running Request: "CreateUserCommand" (1695 miliseconds)CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/07/2024 14:24:05, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/07/2024 15:24:12 +01:00 HTTP "POST" "/api/users" responded 200 in 1839.3762 ms
+01/09/2024 19:18:55 +01:00 Application is starting up
+01/09/2024 19:19:18 +01:00 Failed to determine the https port for redirect.
+01/09/2024 19:19:18 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 18:19:14, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/09/2024 19:19:18 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 18:19:14, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/09/2024 19:19:20 +01:00 No store type was specified for the decimal property '"Price"' on entity type '"Ticket"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+01/09/2024 19:19:21 +01:00 TrainTicketManagement Long Running Request: "CreateUserCommand" (2060 miliseconds)CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 18:19:14, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/09/2024 19:19:21 +01:00 HTTP "POST" "/api/users" responded 200 in 2234.0662 ms
+01/09/2024 19:25:18 +01:00 Application is starting up
+01/09/2024 19:25:27 +01:00 Failed to determine the https port for redirect.
+01/09/2024 19:25:28 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 18:25:24, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/09/2024 19:25:28 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 18:25:24, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/09/2024 19:25:29 +01:00 No store type was specified for the decimal property '"Price"' on entity type '"Ticket"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+01/09/2024 19:25:29 +01:00 TrainTicketManagement Long Running Request: "CreateUserCommand" (1875 miliseconds)CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 18:25:24, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/09/2024 19:25:30 +01:00 HTTP "POST" "/api/users" responded 200 in 2060.1017 ms
+01/09/2024 19:33:06 +01:00 Application is starting up
+01/09/2024 19:33:16 +01:00 Failed to determine the https port for redirect.
+01/09/2024 19:33:16 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 18:33:12, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/09/2024 19:33:16 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 18:33:12, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/09/2024 19:33:17 +01:00 No store type was specified for the decimal property '"Price"' on entity type '"Ticket"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+01/09/2024 19:33:18 +01:00 TrainTicketManagement Long Running Request: "CreateUserCommand" (2030 miliseconds)CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 18:33:12, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/09/2024 19:33:18 +01:00 HTTP "POST" "/api/users" responded 200 in 2171.1487 ms
+01/09/2024 20:25:14 +01:00 Application is starting up
+01/09/2024 20:25:34 +01:00 Failed to determine the https port for redirect.
+01/09/2024 20:25:35 +01:00 TrainTicketManagement Request: "GetUserDetailQuery" GetUserDetailQuery { UserId: 1 }
+01/09/2024 20:25:35 +01:00 TrainTicketManagement Request: "GetUserDetailQuery" GetUserDetailQuery { UserId: 1 }
+01/09/2024 20:25:36 +01:00 No store type was specified for the decimal property '"Price"' on entity type '"Ticket"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+01/09/2024 20:25:37 +01:00 TrainTicketManagement Long Running Request: "GetUserDetailQuery" (2737 miliseconds)GetUserDetailQuery { UserId: 1 }
+01/09/2024 20:25:37 +01:00 HTTP "GET" "/api/users/1" responded 200 in 2946.3388 ms
+01/09/2024 20:25:58 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "string", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 19:25:57, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/09/2024 20:25:58 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "string", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 19:25:57, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/09/2024 20:25:59 +01:00 HTTP "POST" "/api/users" responded 200 in 297.2838 ms
+01/09/2024 20:39:49 +01:00 Application is starting up
+01/09/2024 20:40:24 +01:00 Failed to determine the https port for redirect.
+01/09/2024 20:40:24 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 19:40:18, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/09/2024 20:40:24 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 19:40:18, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/09/2024 20:40:26 +01:00 No store type was specified for the decimal property '"Price"' on entity type '"Ticket"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+01/09/2024 20:40:27 +01:00 TrainTicketManagement Long Running Request: "CreateUserCommand" (2412 miliseconds)CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 19:40:18, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/09/2024 20:40:27 +01:00 HTTP "POST" "/api/users" responded 200 in 2590.3701 ms
+01/09/2024 23:23:28 +01:00 Application is starting up
+01/09/2024 23:23:47 +01:00 Failed to determine the https port for redirect.
+01/09/2024 23:23:47 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "kamilkamilkamil", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 22:23:37, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/09/2024 23:23:47 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "kamilkamilkamil", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 22:23:37, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/09/2024 23:23:48 +01:00 No store type was specified for the decimal property '"Price"' on entity type '"Ticket"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+01/09/2024 23:23:50 +01:00 TrainTicketManagement Long Running Request: "CreateUserCommand" (3210 miliseconds)CreateUserCommand { FirstName: "kamilkamilkamil", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 22:23:37, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/09/2024 23:23:50 +01:00 HTTP "POST" "/api/users" responded 200 in 3367.9294 ms
+01/09/2024 23:27:08 +01:00 Application is starting up
+01/09/2024 23:28:07 +01:00 Application is starting up
+01/09/2024 23:31:14 +01:00 Application is starting up
+01/09/2024 23:31:32 +01:00 Application is starting up
+01/09/2024 23:31:48 +01:00 Failed to determine the https port for redirect.
+01/09/2024 23:32:04 +01:00 HTTP "POST" "/api/users" responded 500 in 16176.0732 ms
+System.NotImplementedException: The method or operation is not implemented.
+   at TrainTicketManagement.Application.Common.Behaviours.LoggingBehaviour`1.Process(TRequest request, CancellationToken cancellationToken) in C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Application\Common\Behaviours\LoggingBehaviour.cs:line 24
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at TrainTicketManagement.Api.Controllers.UserManagerController.CreateDirector(CreateUserCommand command) in C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Api\Controllers\UserManagerController.cs:line 25
+   at lambda_method6(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+01/09/2024 23:32:04 +01:00 An unhandled exception has occurred while executing the request.
+System.NotImplementedException: The method or operation is not implemented.
+   at TrainTicketManagement.Application.Common.Behaviours.LoggingBehaviour`1.Process(TRequest request, CancellationToken cancellationToken) in C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Application\Common\Behaviours\LoggingBehaviour.cs:line 24
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at TrainTicketManagement.Api.Controllers.UserManagerController.CreateDirector(CreateUserCommand command) in C:\Projekty Programowania\WebAPI Masters\TrainTicketManagement\TrainTicketManagement.Api\Controllers\UserManagerController.cs:line 25
+   at lambda_method6(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+01/09/2024 23:32:53 +01:00 Application is starting up
+01/09/2024 23:33:01 +01:00 Failed to determine the https port for redirect.
+01/09/2024 23:33:48 +01:00 Application is starting up
+01/09/2024 23:34:00 +01:00 Failed to determine the https port for redirect.
+01/09/2024 23:35:14 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 22:33:54, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/09/2024 23:35:36 +01:00 No store type was specified for the decimal property '"Price"' on entity type '"Ticket"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+01/09/2024 23:35:40 +01:00 HTTP "POST" "/api/users" responded 200 in 99932.4582 ms
+01/09/2024 23:36:26 +01:00 Application is starting up
+01/09/2024 23:36:35 +01:00 Failed to determine the https port for redirect.
+01/09/2024 23:36:35 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 22:36:30, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/09/2024 23:36:36 +01:00 No store type was specified for the decimal property '"Price"' on entity type '"Ticket"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+01/09/2024 23:36:37 +01:00 HTTP "POST" "/api/users" responded 200 in 1865.0805 ms
+01/10/2024 00:42:35 +01:00 Application is starting up
+01/10/2024 00:42:44 +01:00 Failed to determine the https port for redirect.
+01/10/2024 00:42:44 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 23:42:39, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/10/2024 00:42:44 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 23:42:39, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/10/2024 00:42:46 +01:00 No store type was specified for the decimal property '"Price"' on entity type '"Ticket"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+01/10/2024 00:42:46 +01:00 TrainTicketManagement Long Running Request: "CreateUserCommand" (1935 miliseconds)CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 23:42:39, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/10/2024 00:42:46 +01:00 HTTP "POST" "/api/users" responded 200 in 2088.1000 ms
+01/10/2024 00:54:09 +01:00 Application is starting up
+01/10/2024 00:54:17 +01:00 Failed to determine the https port for redirect.
+01/10/2024 00:54:17 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 23:54:13, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/10/2024 00:54:17 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 23:54:13, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/10/2024 00:54:18 +01:00 No store type was specified for the decimal property '"Price"' on entity type '"Ticket"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+01/10/2024 00:54:19 +01:00 TrainTicketManagement Long Running Request: "CreateUserCommand" (1998 miliseconds)CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 23:54:13, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/10/2024 00:54:19 +01:00 HTTP "POST" "/api/users" responded 200 in 2137.7721 ms
+01/10/2024 00:54:36 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "stringstringstringstringstringstring", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 23:54:28, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/10/2024 00:54:36 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "stringstringstringstringstringstring", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 23:54:28, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/10/2024 00:54:36 +01:00 HTTP "POST" "/api/users" responded 200 in 111.6534 ms
+01/10/2024 00:58:57 +01:00 Application is starting up
+01/10/2024 00:59:06 +01:00 Failed to determine the https port for redirect.
+01/10/2024 00:59:06 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 23:59:02, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/10/2024 00:59:06 +01:00 TrainTicketManagement Request: "CreateUserCommand" CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 23:59:02, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/10/2024 00:59:07 +01:00 No store type was specified for the decimal property '"Price"' on entity type '"Ticket"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+01/10/2024 00:59:08 +01:00 TrainTicketManagement Long Running Request: "CreateUserCommand" (1911 miliseconds)CreateUserCommand { FirstName: "", LastName: "string", PeselNumber: "string", DateOfBirth: 01/09/2024 23:59:02, Login: "string", Password: "string", UserName: "string", DomainName: "string" }
+01/10/2024 00:59:08 +01:00 HTTP "POST" "/api/users" responded 200 in 2049.6032 ms

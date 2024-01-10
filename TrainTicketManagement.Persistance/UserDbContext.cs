@@ -7,7 +7,7 @@ namespace TrainTicketManagement.Persistance;
 
 using Microsoft.EntityFrameworkCore;
 
-public class UserDbContext : DbContext
+public class UserDbContext : DbContext, IUserDbContext
 {
     private readonly IDateTime _dateTime;
     public UserDbContext(DbContextOptions<UserDbContext> options, IDateTime dateTime) : base(options)

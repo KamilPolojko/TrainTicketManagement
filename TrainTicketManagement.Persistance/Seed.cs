@@ -27,17 +27,19 @@ public static class Seed
         );
         
         modelBuilder.Entity<Ticket>().HasData(
-            new Ticket() { Id=1,UserId=1,NumberOfSeat=100,NameOfTrainClass="First",Price=19.99f,TrainRelief="Student", TravelStartTime = new DateTime(2009,01,01), ChangeStationsSchedule = { new DateTime(2009,01,01) }, TravelFinishTime = new DateTime(2009,01,01)},
-            new Ticket() { Id=2,UserId=1,NumberOfSeat=120,NameOfTrainClass="First",Price=16.99f,TrainRelief="Student", TravelStartTime = new DateTime(2007,02,03), ChangeStationsSchedule = { new DateTime(2007,02,03) }, TravelFinishTime = new DateTime(2007,02,03)}
+            new Ticket() { Id=1,UserId=1,NumberOfSeat=100,NameOfTrainClass="First",Price=19.99m,TrainRelief="Student", TravelStartTime = new DateTime(2009,01,01), ChangeStationsSchedule = { new DateTime(2009,01,01) }, TravelFinishTime = new DateTime(2009,01,01)},
+            new Ticket() { Id=2,UserId=1,NumberOfSeat=120,NameOfTrainClass="First",Price=16.99m,TrainRelief="Student", TravelStartTime = new DateTime(2007,02,03), ChangeStationsSchedule = { new DateTime(2007,02,03) }, TravelFinishTime = new DateTime(2007,02,03)}
         );
         
         
-        
+    
+    
         modelBuilder.Entity<Train>(d =>
             {
                 d.HasData(new Train()
                 {
                     Id = 1,
+                    TicketId = 1,
                     StatusID = 1,
                     Created = DateTime.Now,
                     QuantityOfCarriage = 4,
@@ -51,7 +53,7 @@ public static class Seed
                     TravelFinishTime = { new DateTime(2008,03,24) }
                     
                 });
-                d.OwnsOne(d => d.Name).HasData(new {TrainId=1, TicketId = 1,  FirstPartOfName = "IC", SerialNumberOfTrain = "1620" });
+                d.OwnsOne(d => d.Name).HasData(new {TrainId=1, TicketId =1,  FirstPartOfName = "IC", SerialNumberOfTrain = "1620" });
             }
         );
         

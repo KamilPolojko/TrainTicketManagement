@@ -12,7 +12,7 @@ public class Ticket :AuditableEntity
     
     public string NameOfTrainClass { get; set; }
     
-    public float Price { get; set; }
+    public decimal Price { get; set; }
     
     public string TrainRelief { get; set; }
     

@@ -18,7 +18,6 @@ public class PersonName:ValueObject
     }
     
     
-
     
     protected override IEnumerable<object> GetEqualityComponents()
     {
